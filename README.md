@@ -21,7 +21,7 @@ ___
   * Import `ChallengeDataset` in `utils.py` 
   * Created class named `DiabeticRetinopathyGradingDataset` with defined class `DatasetBase`.
   * `ChallengeDataset` is returned for train/validation by calling `configure_train` and `configure_vallidation` funtions. `get_train` and `get_validation` will return each training dataset and validation dataset in DataBase class named `DiabeticRetinopathyGradingDataset` 
-  ``` 
+  ```{python}  
   from dataset import ChallengeDataset 
   ...
   challenge_default_transform = transforms.Compose(
@@ -60,7 +60,7 @@ class DiabeticRetinopathyGradingDataset(DatasetBase):
   ```
   * In DataBase class named `DiabeticRetinopathyGradingDataset`, each transform modules for training and testing are differently applied and by calling `get_class_dataset` function and defined by `get_class_transforms` in class `MoCoTransforms`.
    * The reason why defining two different transform for train and test is that transform for train needs to be joint embedding(image data is saved in list data structure) so two transform are needed to be applied for two different images in the list. However, for test one, it just needs one transform for a single image. 
- ``` 
+ ```{python}  
  
 def get_class_dataset(name: str) -> DatasetBase:
     if name == "stl10":
