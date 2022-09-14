@@ -2,11 +2,12 @@
 VICReg(Variance-Invariance-Covariance Regularization for Self-Supervised Learning) Implementation of the Diabetic Retinopathy Image classification task(task3) hosted by Diabetic Retinopathy Analysis Challenge (DRAC22)
 ___
 
-### Original Information Links
+### Original Code Github Links
 
 * VIGReg github link:
 https://github.com/facebookresearch/vicreg/blob/main/main_vicreg.py
 
+### Information about the Retinopathy Analysis Challenge 2022
 * Link for the Retinopathy Analysis Challenge 2022:
 https://drac22.grand-challenge.org/
 
