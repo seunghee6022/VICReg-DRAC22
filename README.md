@@ -1,5 +1,5 @@
 # VICReg-DRAC22
-## Application of VICReg: Variance-Invariance-Covariance Regularization for Self-Supervised Learning to Diabetic Retinopathy Analysis Challenge 2022
+## VICReg: Variance-Invariance-Covariance Regularization for Self-Supervised Learning and VICReg Application to Diabetic Retinopathy Analysis Challenge 2022
 <!-- ## VICReg: Variance-Invariance-Covariance Regularization for Self-Supervised Learning -->
 Implementation of the Diabetic Retinopathy Image classification task hosted by Diabetic Retinopathy Analysis Challenge (DRAC22)
 ___
