@@ -11,6 +11,18 @@ https://github.com/facebookresearch/vicreg/blob/main/main_vicreg.py
 https://drac22.grand-challenge.org/
 
 ___
+
+### Setup
+
+The setup below works on silicon Mac. Windows should work in a similar fashion. Just give it a quick google.
+```bash
+python3 -m venv <directory name>
+source <directory name>/bin/activate
+pip install -r requirements.txt
+```
+The dataset should be stored in a folder called `data` in the same location as `main.py` and all images should reside is a child folder called `C. Diabetic Retinopathy Grading/train_data`. These names can also be adjusted in the config file. You can read more about the dataset in the corresponding section below.
+
+___
 ### Main Changes
 1.  Created `dataset.py`
   * Split the one image dataset folder(`1. Original Images`) to train, val, test folders(all are splited in `train_data` folder) beforehand.
@@ -21,7 +33,7 @@ ___
   * Import `ChallengeDataset` in `utils.py` 
   * Created class named `DiabeticRetinopathyGradingDataset` with defined class `DatasetBase`.
   * `ChallengeDataset` is returned for train/validation by calling `configure_train` and `configure_vallidation` funtions. `get_train` and `get_validation` will return each training dataset and validation dataset in DataBase class named `DiabeticRetinopathyGradingDataset` 
-  ```{python}  
+  ```python  
   from dataset import ChallengeDataset 
   ...
   challenge_default_transform = transforms.Compose(
@@ -60,7 +72,7 @@ class DiabeticRetinopathyGradingDataset(DatasetBase):
   ```
   * In DataBase class named `DiabeticRetinopathyGradingDataset`, each transform modules for training and testing are differently applied and by calling `get_class_dataset` function and defined by `get_class_transforms` in class `MoCoTransforms`.
    * The reason why defining two different transform for train and test is that transform for train needs to be joint embedding(image data is saved in list data structure) so two transform are needed to be applied for two different images in the list. However, for test one, it just needs one transform for a single image. 
- ```{python}  
+ ```python  
  
 def get_class_dataset(name: str) -> DatasetBase:
     if name == "stl10":
