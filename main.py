@@ -50,26 +50,14 @@ trainer = pl.Trainer(
 
 
 
-def test_step(self, batch, batch_idx):
-        x, y = batch
-        logits = self(x)
-        acc = FM.accuracy(logits, y)
-        loss = F.cross_entropy(logits, y)
-        metrics = {'test_acc': acc, 'test_loss': loss}
-        self.log_dict(metrics)
-
 def run_():
     torch.multiprocessing.freeze_support()
     print('loop')
 
 if __name__ == '__main__':
     run_()
-    # test_loader = DataLoader(test_dataset, batch_size=args.batch_size)
 
     trainer.fit(model)
-    # https://github.com/Lightning-AI/lightning/issues/12439
-
-    # trainer.test(test_dataloaders=test_loader)
 
     run_df = pd.read_csv('logger_history/logger/version_114/metrics copy.csv', sep=',')
 

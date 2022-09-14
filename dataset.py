@@ -25,7 +25,7 @@ class ChallengeDataset(Dataset):
                 self.paths.append(str(file))
         csv_df = pd.read_csv(csv_path, sep=',')
         if csv_df.isnull().values.any():
-            print("Nan이 있습니다.")
+            print("There is NaN.")
         self.csv_df = csv_df
 
         
@@ -42,7 +42,7 @@ class ChallengeDataset(Dataset):
 
         img = self.transform(img)
         if csv_df.isnull().values.any():
-            print(f"{index} - Nan이 있습니다.")
+            print(f"{index} - There is Nan.")
         
         return img, target
 
