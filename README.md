@@ -33,7 +33,10 @@ ___
   * Split the one image dataset folder(`1. Original Images`) to train, val, test folders(all are splited in `train_data` folder) beforehand.
   * created `ChallengeDataset` for challenge dataset. It is imported in `utils.py` and will be returned Dataset for train/validation by calling `configure_train` and `configure_vallidation` funtions. `get_train` and `get_validation` will return each training dataset and validation dataset in DataBase class named `DiabeticRetinopathyGradingDataset` 
  
-2.  Modified `moco.py` to `model.py`
+2.  Parameter changes in `main.py`
+  * Add new EarlyStopping parameter `patience` to trainer 
+  * `VICRegParams`
+3.  Modified `moco.py` to `model.py`
  * Model class name is `SelfSupervisedMethod` and here specify the custom challenge dataset imported from `utils.DatasetBase`
  ```python
  class SelfSupervisedMethod(pl.LightningModule):
@@ -201,6 +204,5 @@ def get_class_dataset(name: str) -> DatasetBase:
         return DiabeticRetinopathyGradingDataset(transform_train=transform_train, transform_test=transform_test)
     raise NotImplementedError(f"Dataset {name} not defined")
  ```
-4.  Parameter changes in `main.py`
-  * Add new EarlyStopping parameter `patience` to trainer 
-  * `VICRegParams`
+___
+Results
