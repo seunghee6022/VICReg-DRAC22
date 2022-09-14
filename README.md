@@ -21,7 +21,12 @@ source <directory name>/bin/activate
 pip install -r requirements.txt
 ```
 The dataset should be stored in a folder called `data` in the same location as `main.py` and all images should reside is a child folder called `C. Diabetic Retinopathy Grading/train_data`. These names can also be adjusted in the config file. You can read more about the dataset in the corresponding section below.
+___
+### Run
 
+```python
+python main.py
+```
 ___
 ### Main Changes
 1.  Created `dataset.py`
